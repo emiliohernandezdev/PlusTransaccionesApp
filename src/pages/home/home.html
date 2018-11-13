@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Agregar transacción
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-item>
+    <ion-label floating>Monto</ion-label>
+    <ion-input type="number" [(ngModel)]="tran.ammount"></ion-input>
+  </ion-item>
+
+  <ion-item>
+      <ion-label floating>Comentarios</ion-label>
+      <ion-textarea rows="1" name="comment" maxlength="256" [(ngModel)]="tran.comment" autosize></ion-textarea>
+    </ion-item>
+
+  <br />
+
+  <ion-list>
+      <ion-item>
+        <ion-label>País</ion-label>
+        <ion-select [(ngModel)]="tran.country" okText="Aceptar" cancelText="Cancelar">
+          <ion-option value="gt">Guatemala</ion-option>
+          <ion-option value="sv">El Salvador</ion-option>
+          <ion-option value="cr">Costa Rica</ion-option>
+          <ion-option value="hn">Honduras</ion-option>
+          <ion-option value="nc">Nicaragua</ion-option>
+          <ion-option value="pn">Panamá</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+
+    <ion-list>
+        <ion-item>
+          <ion-label>MMC</ion-label>
+          <ion-select [(ngModel)]="tran.mmc" okText="Aceptar" cancelText="Cancelar">
+            <ion-option value="amz">Amazon</ion-option>
+            <ion-option value="gog">Google</ion-option>
+            <ion-option value="ps">PlayStation</ion-option>
+            <ion-option value="genesis">Sega Genesis</ion-option>
+            <ion-option value="saturn">Sega Saturn</ion-option>
+            <ion-option value="snes">SNES</ion-option>
+          </ion-select>
+        </ion-item>
+      </ion-list>
+
+  
+  <br />
+
+  <ion-grid>
+      <ion-row>
+        <ion-col col-6>
+            <button ion-button item-end round >
+              Guardar &nbsp; <ion-icon name="checkmark" (click)="save()"></ion-icon>
+            </button>
+        </ion-col>
+        <ion-col col-6>
+            <button ion-button item-end outline round >
+              Cancelar &nbsp; <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+
+
+  
+
+</ion-content>
